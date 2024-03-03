@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(245, 245, 245, 0.907);
+}
+
+canvas {
+  height: 100vh !important;
+}
+
+.app {
+  display: flex;
+}
