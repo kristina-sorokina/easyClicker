@@ -5,6 +5,7 @@ import {
   OrbitControls,
   ContactShadows,
   Grid,
+  Loader,
 } from "@react-three/drei";
 import Keyboard_animated from "./components/Keyboard_animated";
 
@@ -46,6 +47,7 @@ function App() {
           fadeDistance={10}
         />
       </Canvas>
+      <Loader />
     </div>
   );
 }

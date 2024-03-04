@@ -16,6 +16,7 @@ export default function Model(props) {
     () => void (document.body.style.cursor = hovered ? "pointer" : "auto"),
     [hovered]
   );
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
