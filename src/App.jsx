@@ -6,7 +6,7 @@ import {
   ContactShadows,
   Grid,
 } from "@react-three/drei";
-import Keyboard_animated from "../public/Keyboard_animated";
+import Keyboard_animated from "./components/Keyboard_animated";
 
 import "./App.css";
 

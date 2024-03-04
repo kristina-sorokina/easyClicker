@@ -20,78 +20,64 @@ export default function Model(props) {
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
         <mesh
-          castShadow
-          receiveShadow
           name="cord"
           geometry={nodes.cord.geometry}
           material={materials.darkgrey}
+          rotation={[0.049, 0, 0]}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="body"
           geometry={nodes.body.geometry}
           material={materials.yellow}
+          rotation={[0.049, 0, 0]}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="bottom"
           geometry={nodes.bottom.geometry}
           material={materials.darkgrey}
+          rotation={[0.049, 0, 0]}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="cap"
           geometry={nodes.cap.geometry}
           material={materials.powerbank_grey}
+          rotation={[0.049, 0, 0]}
         />
-        <group name="plug">
+        <group name="plug" rotation={[0.049, 0, 0]}>
           <mesh
-            castShadow
-            receiveShadow
-            name="Cube015"
-            geometry={nodes.Cube015.geometry}
+            name="plug_1"
+            geometry={nodes.plug_1.geometry}
             material={materials.darkgrey}
           />
           <mesh
-            castShadow
-            receiveShadow
-            name="Cube015_1"
-            geometry={nodes.Cube015_1.geometry}
+            name="plug_2"
+            geometry={nodes.plug_2.geometry}
             material={materials.purple}
           />
         </group>
         <mesh
-          castShadow
-          receiveShadow
           name="plug_rim"
           geometry={nodes.plug_rim.geometry}
           material={materials.darkgrey}
+          rotation={[0.049, 0, 0]}
         />
-        <group name="cord_rim">
+        <group name="cord_rim" rotation={[0.049, 0, 0]}>
           <mesh
-            castShadow
-            receiveShadow
-            name="Circle003"
-            geometry={nodes.Circle003.geometry}
+            name="cord_rim_1"
+            geometry={nodes.cord_rim_1.geometry}
             material={materials.purple}
           />
           <mesh
-            castShadow
-            receiveShadow
-            name="Circle003_1"
-            geometry={nodes.Circle003_1.geometry}
+            name="cord_rim_2"
+            geometry={nodes.cord_rim_2.geometry}
             material={materials.darkgrey}
           />
         </group>
         <mesh
-          castShadow
-          receiveShadow
           name="key_logo"
           geometry={nodes.key_logo.geometry}
           material={materials.logo_txtr}
+          rotation={[0.049, 0, 0]}
           onPointerOver={() => setHovered(true)}
           onPointerOut={() => setHovered(false)}
           onClick={() => {
@@ -99,11 +85,10 @@ export default function Model(props) {
           }}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="key_long"
           geometry={nodes.key_long.geometry}
           material={materials.logoText_txtr}
+          rotation={[0.049, 0, 0]}
           onPointerOver={() => setHovered(true)}
           onPointerOut={() => setHovered(false)}
           onClick={() => {
@@ -111,36 +96,54 @@ export default function Model(props) {
           }}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="key_middle_left"
           geometry={nodes.key_middle_left.geometry}
           material={materials.nfc_txtr}
+          rotation={[0.049, 0, 0]}
           onPointerOver={() => setHovered(true)}
           onPointerOut={() => setHovered(false)}
+          onClick={() => {
+            actions["key_middle_leftAction"]
+              .setLoop(THREE.LoopOnce)
+              .play()
+              .reset();
+          }}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="key_middle_middle"
           geometry={nodes.key_middle_middle.geometry}
           material={materials.bitcoin_txtr}
+          rotation={[0.049, 0, 0]}
           onPointerOver={() => setHovered(true)}
           onPointerOut={() => setHovered(false)}
+          onClick={() => {
+            actions["key_middle_middleAction"]
+              .setLoop(THREE.LoopOnce)
+              .play()
+              .reset();
+          }}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="key_middle_right"
           geometry={nodes.key_middle_right.geometry}
           material={materials.tickets_txtr}
+          rotation={[0.049, 0, 0]}
+          onPointerOver={() => setHovered(true)}
+          onPointerOut={() => setHovered(false)}
+          onClick={() => {
+            actions["key_middle_rightAction"]
+              .setLoop(THREE.LoopOnce)
+              .play()
+              .reset();
+          }}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="key_upper_left"
           geometry={nodes.key_upper_left.geometry}
           material={materials.ruble_txtr}
+          rotation={[0.049, 0, 0]}
+          onPointerOver={() => setHovered(true)}
+          onPointerOut={() => setHovered(false)}
           onClick={() => {
             actions["key_upper_leftAction"]
               .setLoop(THREE.LoopOnce)
@@ -149,32 +152,43 @@ export default function Model(props) {
           }}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="key_upper_middle"
           geometry={nodes.key_upper_middle.geometry}
           material={materials.like_txtr}
+          onPointerOver={() => setHovered(true)}
+          onPointerOut={() => setHovered(false)}
+          onClick={() => {
+            actions["key_upper_middleAction"]
+              .setLoop(THREE.LoopOnce)
+              .play()
+              .reset();
+          }}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="key_upper_right"
           geometry={nodes.key_upper_right.geometry}
           material={materials.euro_txtr}
+          rotation={[0.049, 0, 0]}
+          onPointerOver={() => setHovered(true)}
+          onPointerOut={() => setHovered(false)}
+          onClick={() => {
+            actions["key_upper_rightAction"]
+              .setLoop(THREE.LoopOnce)
+              .play()
+              .reset();
+          }}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="base_inner"
           geometry={nodes.base_inner.geometry}
           material={materials.purple}
+          rotation={[0.049, 0, 0]}
         />
         <mesh
-          castShadow
-          receiveShadow
           name="base_outer"
           geometry={nodes.base_outer.geometry}
           material={materials.darkgrey}
+          rotation={[0.049, 0, 0]}
         />
       </group>
     </group>
