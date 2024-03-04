@@ -41,7 +41,7 @@ function App() {
       >
         <div>
           <img
-            src="..\public\images\bank_logo.png"
+            src="/images/bank_logo.png"
             alt=""
             style={{
               borderRadius: "50%",
