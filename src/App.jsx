@@ -14,30 +14,31 @@ import Keyboard_animated from "./components/Keyboard_animated";
 import Sidebar from "./components/Sidebar";
 
 import "./App.css";
+import styles from "./App.module.css";
 
 function App() {
-  const [text, setText] = useState("Hi!");
 
   function getText(textfrommodel) {
-    setText(textfrommodel);
-    notify();
+    notify(textfrommodel);
   }
 
-  const notify = () =>
+  const notify = (currentText) =>
     toast.custom((t) => (
       <div
-        style={{
-          borderRadius: "10px",
-          backgroundColor: "rgba(211, 211, 211, 0.15)",
-          color: "#fff",
-          width: "236px",
-          height: "200px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "0 10px",
-        }}
+        // style={{
+        //   borderRadius: "10px",
+        //   backgroundColor: "rgba(211, 211, 211, 0.15)",
+        //   color: "#fff",
+        //   width: "236px",
+        //   height: "200px",
+        //   display: "flex",
+        //   flexDirection: "column",
+        //   alignItems: "center",
+        //   justifyContent: "center",
+        //   padding: "0 10px",
+        // }}
+        className={styles['toast']}
+        data-toster="data-toster"
       >
         <div>
           <img
@@ -57,7 +58,7 @@ function App() {
             fontWeight: "200",
           }}
         >
-          {text}
+          {currentText || ''}
         </div>
         <div>
           <button
@@ -88,7 +89,7 @@ function App() {
           <ambientLight intensity={1.1} />
           <OrbitControls />
           <Suspense fallback={null}>
-            <Keyboard_animated notify={notify} getText={getText} />
+            <Keyboard_animated getText={getText} />
           </Suspense>
           <Environment
             background
