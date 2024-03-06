@@ -14,6 +14,13 @@ export default function Model(props) {
 
   const { getText } = props;
 
+  const handler = (event, settings) => {
+    event.stopPropagation();
+  
+    actions[settings.actionKey].setLoop(THREE.LoopOnce).play().reset();
+    getText(settings.text);
+  }
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
@@ -78,11 +85,11 @@ export default function Model(props) {
           rotation={[0.049, 0, 0]}
           onPointerOver={() => setHovered(true)}
           onPointerOut={() => setHovered(false)}
-          onClick={(e) => {
-            e.stopPropagation();
-            actions["key_logoAction"].setLoop(THREE.LoopOnce).play().reset();
-            getText("Raiffeisen Bank sends you love");
-          }}
+          onClick={event => handler(event, {
+            actionKey: 'key_logoAction',
+            text: "Raiffeisen Bank sends you love"
+          })}
+          
         />
         <mesh
           name="key_long"
